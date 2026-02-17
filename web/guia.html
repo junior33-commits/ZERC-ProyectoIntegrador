@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>EcoValora | Guía Educativa</title>
+
+        <link rel="stylesheet" href="style/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style/bootstrap/css/bootstrap-utilities.min.css">
+    </head>
+    <body style="background-color:#F5F5F5;">
+
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#2E7D32;">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">♻ EcoValora</a>
+
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="guia.html">Guía Educativa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="centrosReciclaje.html">Centros</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- TÍTULO -->
+        <section class="py-4 text-center">
+            <div class="container">
+                <h2 class="fw-bold text-success">Guía Educativa de Reciclaje</h2>
+                <p class="text-secondary">Aprende a separar y reutilizar correctamente.</p>
+            </div>
+        </section>
+
+        <!-- TARJETAS DINÁMICAS -->
+        <section class="container mb-5">
+            <div class="row g-4" id="guia">
+                <!-- Aquí se insertarán las tarjetas dinámicamente -->
+            </div>
+        </section>
+
+        <footer class="text-center py-3" style="background-color:#2E7D32; color:white;">
+            <small>© 2026 EcoValora | Código para el mañana</small>
+        </footer>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+
+        <!-- Script dinámico -->
+        <script>
+            fetch('/EcoValora/api/guia')
+                    .then(response => response.json())
+                    .then(data => {
+                        const contenedor = document.getElementById("guia");
+                        data.forEach(guia => {
+                            const card = `
+                <div class="col-md-4">
+                  <div class="card h-100 text-center shadow-sm">
+                    <div class="card-body">
+                      <h5>${guia.titulo}</h5>
+                      <p>${guia.descripcion}</p>
+                      <a href="#" class="btn btn-outline-primary">Ver más</a>
+                    </div>
+                  </div>
+                </div>`;
+                            contenedor.innerHTML += card;
+                        });
+                    })
+                    .catch(error => console.error("Error cargando guía:", error));
+        </script>
+
+    </body>
+</html>

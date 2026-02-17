@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Centros de Reciclaje | EcoValora</title>
+        <link rel="stylesheet" href="style/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style/bootstrap/css/bootstrap-utilities.min.css">
+    </head>
+    <body style="background-color: #F1F8E9;">
+
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2E7D32;">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">EcoValora</a>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="catalogo.html">Materiales</a></li>
+                        <li class="nav-item"><a class="nav-link" href="guia.html">Guía</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="centrosReciclaje.html">Centros</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ENCABEZADO -->
+        <header class="text-center py-5">
+            <h1 class="fw-bold">Centros de Reciclaje</h1>
+            <p class="text-muted">Encuentra dónde llevar tus residuos valorizables</p>
+        </header>
+
+        <!-- CONTENIDO -->
+        <section class="container">
+            <div class="row g-4" id="centros">
+                <!-- Aquí se insertarán las tarjetas dinámicamente -->
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="text-center py-3 mt-5" style="background-color: #2E7D32; color: white;">
+            <small>© 2026 EcoValora | Código para el mañana</small>
+        </footer>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+
+        <!-- Script api -->
+        <script>
+            fetch('/EcoValora/api/centros')
+                    .then(response => response.json())
+                    .then(data => {
+                        const contenedor = document.getElementById("centros");
+                        data.forEach(centro => {
+                            const card = `
+                <div class="col-md-4">
+                  <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                      <h5 class="card-title">${centro.nombre}</h5>
+                      <p class="card-text">
+                        📍 ${centro.direccion}<br>
+                        ♻ Acepta: ${centro.materialesAceptados}<br>
+                        ⏰ ${centro.horario}
+                      </p>
+                      <a href="#" class="btn btn-success w-100">Ver detalles</a>
+                    </div>
+                  </div>
+                </div>`;
+                            contenedor.innerHTML += card;
+                        });
+                    })
+                    .catch(error => console.error("Error cargando centros:", error));
+        </script>
+
+    </body>
+</html>
