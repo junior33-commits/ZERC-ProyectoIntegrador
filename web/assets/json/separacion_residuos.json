@@ -1,0 +1,26 @@
+[
+  {
+    "id": "sep-001",
+    "titulo": "Contenedor Gris (Inorgánicos)",
+    "color_hex": "#7f8c8d",
+    "pasos_preparacion": [
+      "Vacía completamente el contenido.",
+      "Enjuaga con un poco de agua si tenía residuos de comida.",
+      "Compacta o aplasta para reducir el espacio."
+    ],
+    "que_depositar": ["Latas de aluminio", "Botellas de vidrio", "Plásticos rígidos"],
+    "evitar": ["Papel higiénico usado", "Servilletas sucias", "Restos de comida"]
+  },
+  {
+    "id": "sep-002",
+    "titulo": "Contenedor Verde (Orgánicos)",
+    "color_hex": "#27ae60",
+    "pasos_preparacion": [
+      "Retira etiquetas o plásticos que puedan venir pegados.",
+      "Escurre el exceso de líquidos.",
+      "Deposita sin bolsa de plástico (preferiblemente)."
+    ],
+    "que_depositar": ["Cáscaras de fruta", "Restos de verdura", "Residuos de café"],
+    "evitar": ["Huesos grandes", "Excremento de mascotas", "Lácteos en exceso"]
+  }
+]
