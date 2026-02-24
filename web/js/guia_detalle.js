@@ -1,82 +1,57 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const tema = urlParams.get('tema');
-    const contenedor = document.getElementById('contenedor-guia');
-    const tituloPagina = document.getElementById('titulo-guia');
+document.addEventListener("DOMContentLoaded", async () => {
+    // 1. Extraer el ID de la URL (ej: guia_detalle.html?id=reutilizar-001)
+    const params = new URLSearchParams(window.location.search);
+    const idBuscado = params.get("id");
 
-    const guias = {
-        'separacion': {
-            archivo: 'assets/json/separacion_residuos.json',
-            titulo: 'Guía: Separación de Residuos'
-        },
-        'reutilizar': {
-            archivo: 'assets/json/reutilizar_crear.json',
-            titulo: 'Guía: Reutilizar y Crear'
-        },
-        'proceso': {
-            archivo: 'assets/json/proceso_reciclaje.json',
-            titulo: 'Guía: Proceso de Reciclaje'
-        }
-    };
+    const tituloDoc = document.getElementById("titulo-idea");
+    const contenedor = document.getElementById("pasos-contenedor");
 
-    const configuracion = guias[tema];
-
-    if (!configuracion) {
-        contenedor.innerHTML = '<div class="alert alert-danger w-100">Tema no encontrado.</div>';
+    // Si no hay ID, regresar a la página principal
+    if (!idBuscado) {
+        window.location.href = "guia.html";
         return;
     }
 
-    tituloPagina.innerText = configuracion.titulo;
+    try {
+        // 2. Cargar el JSON (Asegúrate de que la ruta sea correcta)
+        const response = await fetch('assets/json/reutilizar_crear.json');
+        
+        if (!response.ok) throw new Error("No se pudo cargar el archivo JSON");
+        
+        const ideas = await response.json();
 
-    fetch(configuracion.archivo)
-        .then(response => response.json())
-        .then(data => {
-            data.forEach((item, index) => {
-                // Generamos las listas solo si existen en el JSON
-                const pasos = item.pasos_preparacion ? item.pasos_preparacion.map(p => `<li>${p}</li>`).join('') : '';
-                const depositar = item.que_depositar ? item.que_depositar.map(d => `<li>${d}</li>`).join('') : '';
-                const evitar = item.evitar ? item.evitar.map(e => `<li>${e}</li>`).join('') : '';
+        // 3. Buscar la idea que coincida con el ID de la URL
+        const idea = ideas.find(item => item.id === idBuscado);
 
-                const card = `
-                    <div class="col">
-                        <div class="card h-100 shadow-sm border-0">
-                            <div class="p-3 text-white text-center rounded-top" style="background-color: ${item.color_hex || '#2e7d32'}">
-                                <h5 class="mb-0 fw-bold">${item.titulo}</h5>
-                            </div>
-                            
+        if (idea) {
+            // Llenar el título
+            tituloDoc.textContent = idea.nombre_idea;
+            contenedor.innerHTML = ''; // Limpiar el "Cargando..."
+
+            // 4. Recorrer los pasos y agregarlos al HTML
+            idea.pasos.forEach(paso => {
+                contenedor.innerHTML += `
+                    <div class="col-lg-8 mb-5">
+                        <div class="card shadow-sm border-0">
                             <div class="card-body">
-                                <p class="text-muted small">Haz clic en el botón para ver los pasos de preparación y qué materiales depositar.</p>
-                                
-                                <div class="collapse" id="info-${index}">
-                                    <div class="mt-3">
-                                        <h6 class="fw-bold text-success">Pasos de preparación:</h6>
-                                        <ul class="ps-3 small">${pasos}</ul>
-                                        
-                                        <h6 class="fw-bold text-primary">¿Qué depositar?</h6>
-                                        <ul class="ps-3 small">${depositar}</ul>
-                                        
-                                        <h6 class="fw-bold text-danger">Evitar:</h6>
-                                        <ul class="ps-3 small">${evitar}</ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card-footer bg-white border-0 pb-3">
-                                <button class="btn btn-outline-success btn-sm w-100" 
-                                        type="button" 
-                                        data-bs-toggle="collapse" 
-                                        data-bs-target="#info-${index}">
-                                    Ver detalles completos
-                                </button>
+                                <h3 class="text-success">Paso ${paso.numero}: ${paso.titulo}</h3>
+                                <p class="text-muted fs-5">${paso.descripcion}</p>
+                                <img src="${paso.imagen}" 
+                                     class="img-fluid rounded shadow-sm d-block mx-auto mt-3" 
+                                     alt="Imagen del paso ${paso.numero}"
+                                     onerror="this.src='assets/img/default.png'">
                             </div>
                         </div>
                     </div>
                 `;
-                contenedor.innerHTML += card;
             });
-        })
-        .catch(error => {
-            console.error("Error:", error);
-            contenedor.innerHTML = '<div class="alert alert-danger w-100">Error al cargar el JSON.</div>';
-        });
+        } else {
+            tituloDoc.textContent = "Error: Idea no encontrada";
+            tituloDoc.classList.replace("text-success", "text-danger");
+        }
+
+    } catch (error) {
+        console.error("Error detallado:", error);
+        tituloDoc.textContent = "Error al cargar la información";
+    }
 });
