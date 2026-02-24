@@ -35,7 +35,7 @@
 
         <!-- TARJETAS -->
         <section class="container mb-5">
-            <div class="row g-4" id="catalogo">
+            <div class="row row-cols-1 row-cols-md-3 g-4" id="contenedor-catalogo">
                 <!-- Aquí se insertarán las tarjetas desde el backend -->
             </div>
         </section>
@@ -68,6 +68,33 @@
                     })
                     .catch(error => console.error("Error cargando catálogo:", error));
         </script>
+        <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const contenedor = document.getElementById('contenedor-catalogo');
+        
+        // Cargamos los materiales desde la carpeta que creaste
+        fetch('assets/json/materiales_valorizables.json')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(material => {
+                    const card = `
+                        <div class="col">
+                            <div class="card h-100 shadow-sm">
+                                <img src="${material.imagen_url}" class="card-img-top" alt="${material.nombre}" style="height: 200px; object-fit: cover;">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-success">${material.nombre}</h5>
+                                    <p class="card-text text-muted">${material.descripcion_corta}</p>
+                                    <a href="detalle.html?id=${material.id}" class="btn btn-success">Ver Detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    contenedor.innerHTML += card;
+                });
+            })
+            .catch(error => console.error("Error cargando catálogo:", error));
+    });
+</script>
 
     </body>
 </html>
