@@ -3,7 +3,7 @@
     "id": "reutilizar-001",
     "nombre_idea": "Organizador de escritorio con Latas",
     "descripcion_corta": "Transforma latas de aluminio en un práctico organizador.",
-    "imagen_catalogo": "assets/img/reutilizar/organizador_latas_catalogo.jpg",
+    "imagen_catalogo": "../assets/img/reutilizar/organizador_latas_catalogo.jpg",
     "material_principal": "Metales (Latas de aluminio)",
     "dificultad": "Fácil",
     "tiempo_estimado": "30 minutos",
@@ -13,34 +13,34 @@
         "num_paso": 1,
         "titulo": "Limpiar y Preparar",
         "descripcion": "Lava y seca completamente las latas usadas. Asegúrate de que no tengan bordes afilados. Si deseas, aplica una capa de primer.",
-        "imagen_paso": "assets/img/reutilizar/organizador_latas_paso1.jpg"
+        "imagen_paso": "../assets/img/reutilizar/organizador_latas_paso1.jpg"
       },
       {
         "num_paso": 2,
         "titulo": "Pintar y Decorar",
         "descripcion": "Pinta las latas con colores vivos o patrones que te gusten. También puedes forrarlas con tela o papel decorativo.",
-        "imagen_paso": "assets/img/reutilizar/organizador_latas_paso2.jpg"
+        "imagen_paso": "../assets/img/reutilizar/organizador_latas_paso2.jpg"
       },
       {
         "num_paso": 3,
         "titulo": "Ensamblar",
         "descripcion": "Usa pegamento fuerte para unir las latas entre sí en la configuración que desees: en línea, en pirámide, o formando un semicírculo.",
-        "imagen_paso": "assets/img/reutilizar/organizador_latas_paso3.jpg"
+        "imagen_paso": "../assets/img/reutilizar/organizador_latas_paso3.jpg"
       },
       {
         "num_paso": 4,
         "titulo": "¡Listo para usar!",
         "descripcion": "Deja secar bien el pegamento y coloca tus lápices, bolígrafos y otros útiles de escritorio. Un proyecto sencillo y útil.",
-        "imagen_paso": "assets/img/reutilizar/organizador_latas_paso4.jpg"
+        "imagen_paso": "../assets/img/reutilizar/organizador_latas_paso4.jpg"
       }
     ],
-    "video_tutorial_id": "XSyOz5jCrzg" 
+    "video_tutorial_id": "XSyOz5jCrzg"
   },
   {
     "id": "reutilizar-002",
     "nombre_idea": "Macetas auto-regables con Botellas PET",
     "descripcion_corta": "Un sistema de riego sencillo para tus plantas usando botellas de plástico.",
-    "imagen_catalogo": "assets/img/reutilizar/maceta_pet_catalogo.jpg",
+    "imagen_catalogo": "../assets/img/reutilizar/maceta_pet_catalogo.jpg",
     "material_principal": "Plásticos (Botellas PET)",
     "dificultad": "Intermedio",
     "tiempo_estimado": "45 minutos",
@@ -50,101 +50,27 @@
         "num_paso": 1,
         "titulo": "Cortar la Botella",
         "descripcion": "Corta la botella PET por la mitad o un poco más arriba de la mitad. La parte superior será la maceta y la inferior el depósito de agua.",
-        "imagen_paso": "assets/img/reutilizar/maceta_pet_paso1.jpg"
+        "imagen_paso": "../assets/img/reutilizar/maceta_pet_paso1.jpg"
       },
       {
         "num_paso": 2,
         "titulo": "Preparar la Mecha",
         "descripcion": "Haz un pequeño agujero en la tapa de la botella. Pasa un trozo de cuerda de algodón a través del agujero, dejando que sobresalga por ambos lados. Haz un nudo en el interior para que no se salga.",
-        "imagen_paso": "assets/img/reutilizar/maceta_pet_paso2.jpg"
+        "imagen_paso": "../assets/img/reutilizar/maceta_pet_paso2.jpg"
       },
       {
         "num_paso": 3,
         "titulo": "Ensamblar el Sistema",
         "descripcion": "Coloca la parte superior de la botella, con la tapa y la cuerda, invertida dentro de la parte inferior. La cuerda debe sumergirse en el agua del depósito de abajo.",
-        "imagen_paso": "assets/img/reutilizar/maceta_pet_paso3.jpg"
+        "imagen_paso": "../assets/img/reutilizar/maceta_pet_paso3.jpg"
       },
       {
         "num_paso": 4,
         "titulo": "Plantar",
         "descripcion": "Llena la parte superior (la maceta) con tierra y siembra tu planta o semillas. Llena el depósito inferior con agua. La cuerda irá absorbiendo el agua para regar la planta.",
-        "imagen_paso": "assets/img/reutilizar/maceta_pet_paso4.jpg"
+        "imagen_paso": "../assets/img/reutilizar/maceta_pet_paso4.jpg"
       }
     ],
     "video_tutorial_id": "2RB1xbayWA4&t"
-  },
-  {
-    "id": "reutilizar-003",
-    "nombre_idea": "Carteras o monederos con Tetrapak",
-    "descripcion_corta": "Diseña originales carteras o monederos utilizando envases de Tetrapak.",
-    "imagen_catalogo": "assets/img/reutilizar/cartera_tetrapak_catalogo.jpg",
-    "material_principal": "Papel y Cartón (Envases Tetrapak)",
-    "dificultad": "Intermedio",
-    "tiempo_estimado": "1 hora",
-    "herramientas_necesarias": ["Envases de Tetrapak limpios", "Tijeras o cúter", "Regla", "Marcador", "Pegamento fuerte", "Velcro o broche", "Adornos (opcional)"],
-    "pasos": [
-      {
-        "num_paso": 1,
-        "titulo": "Lavar y Aplanar",
-        "descripcion": "Abre y lava muy bien el envase de Tetrapak. Déjalo secar completamente y aplánalo.",
-        "imagen_paso": "assets/img/reutilizar/cartera_tetrapak_paso1.jpg"
-      },
-      {
-        "num_paso": 2,
-        "titulo": "Cortar y Marcar",
-        "descripcion": "Corta las orillas para tener un rectángulo plano. Marca los dobleces para la cartera con una regla.",
-        "imagen_paso": "assets/img/reutilizar/cartera_tetrapak_paso2.jpg"
-      },
-      {
-        "num_paso": 3,
-        "titulo": "Doblar y Pegar",
-        "descripcion": "Dobla el Tetrapak por las marcas y pega las orillas internas para formar los compartimentos.",
-        "imagen_paso": "assets/img/reutilizar/cartera_tetrapak_paso3.jpg"
-      },
-      {
-        "num_paso": 4,
-        "titulo": "Finalizar",
-        "descripcion": "Coloca un trozo de velcro o un broche en la solapa para cerrar la cartera. Decora a tu gusto.",
-        "imagen_paso": "assets/img/reutilizar/cartera_tetrapak_paso4.jpg"
-      }
-    ],
-    "video_tutorial_id": "AJ7qWnS_DYY&t"
-  },
-  {
-    "id": "reutilizar-004",
-    "nombre_idea": "Jarrones o candelabros con Botellas de Vidrio",
-    "descripcion_corta": "Transforma botellas de vidrio vacías en hermosos objetos decorativos para el hogar.",
-    "imagen_catalogo": "assets/img/reutilizar/jarrones_vidrio_catalogo.jpg",
-    "material_principal": "Vidrio (Botellas de vidrio)",
-    "dificultad": "Fácil",
-    "tiempo_estimado": "20 minutos (más tiempo de secado)",
-    "herramientas_necesarias": ["Botellas de vidrio limpias", "Pintura en aerosol para vidrio", "Cuerda, listones o encaje", "Pegamento para manualidades"],
-    "pasos": [
-      {
-        "num_paso": 1,
-        "titulo": "Limpiar y Quitar Etiquetas",
-        "descripcion": "Lava muy bien las botellas de vidrio y retira todas las etiquetas para que queden completamente limpias.",
-        "imagen_paso": "assets/img/reutilizar/jarrones_vidrio_paso1.jpg"
-      },
-      {
-        "num_paso": 2,
-        "titulo": "Pintar (Opcional)",
-        "descripcion": "En un área ventilada, rocía las botellas con pintura en aerosol para vidrio. Puedes usar diferentes colores o crear degradados.",
-        "imagen_paso": "assets/img/reutilizar/jarrones_vidrio_paso2.jpg"
-      },
-      {
-        "num_paso": 3,
-        "titulo": "Decorar",
-        "descripcion": "Una vez seca la pintura, puedes decorar las botellas con cuerda, listones, encaje, o incluso pequeñas piedras pegadas.",
-        "imagen_paso": "assets/img/reutilizar/jarrones_vidrio_paso3.jpg"
-      },
-      {
-        "num_paso": 4,
-        "titulo": "Uso",
-        "descripcion": "Úsalas como floreros para tus flores favoritas, o coloca velas largas para crear candelabros elegantes.",
-        "imagen_paso": "assets/img/reutilizar/jarrones_vidrio_paso4.jpg"
-      }
-    ],
-    "video_tutorial_id": "gv2ObKMbEU0"
   }
 ]
