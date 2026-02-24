@@ -1,83 +1,77 @@
 document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const tema = urlParams.get('tema');
-    const contenedor = document.getElementById('contenedor-guia');
-    const titulo = document.getElementById('titulo-guia');
+    const idMaterial = urlParams.get('id');
+    const contenedor = document.getElementById('detalle-contenedor');
 
-    const guias = {
-        'separacion': {
-            archivo: 'assets/json/separacion_residuos.json',
-            titulo: 'Guía: Separación de Residuos'
-        },
-        'reutilizar': {
-            archivo: 'assets/json/reutilizar_crear.json',
-            titulo: 'Guía: Reutilizar y Crear'
-        },
-        'proceso': {
-            archivo: 'assets/json/proceso_reciclaje.json',
-            titulo: 'Guía: Proceso de Reciclaje'
-        }
-    };
-
-    const configuracion = guias[tema];
-
-    if (!configuracion) {
-        contenedor.innerHTML = '<div class="alert alert-danger w-100">Tema no encontrado.</div>';
+    if (!idMaterial) {
+        contenedor.innerHTML = '<div class="alert alert-danger">No se seleccionó ningún material.</div>';
         return;
     }
 
-    titulo.innerText = configuracion.titulo;
-
-    fetch(configuracion.archivo)
+    fetch('assets/json/materiales_valorizables.json')
         .then(response => response.json())
-        .then(data => {
-            data.forEach(item => {
-                // 1. Manejo de información faltante (Evita el "undefined")
-                const nombreMostrado = item.titulo || item.nombre || "Sin título";
-                const imagenMostrada = item.imagen_url || item.imagen || "assets/img/default.png";
-                const descripcionMostrada = item.descripcion || item.descripcion_corta || "No hay descripción.";
-                
-                // 2. Lógica para los pasos (Si el JSON tiene un array de pasos)
-                let pasosHtml = "";
-                if (item.pasos && Array.isArray(item.pasos)) {
-                    pasosHtml = `<div class="mt-2 small text-start">
-                        <strong>Pasos:</strong>
-                        <ul class="mb-0">
-                            ${item.pasos.map(p => `<li>${p}</li>`).join('')}
-                        </ul>
-                    </div>`;
-                } else if (item.proceso_pasos) { // Por si el campo se llama así
-                    pasosHtml = `<p class="mt-2 small"><strong>Proceso:</strong> ${item.proceso_pasos}</p>`;
-                }
+        .then(materiales => {
+            const material = materiales.find(m => m.id == idMaterial);
 
-                // 3. Generar la tarjeta con todos los detalles
-                const card = `
-                    <div class="col">
-                        <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                            <div class="bg-light d-flex align-items-center justify-content-center" style="height: 200px;">
-                                <img src="${imagenMostrada}" class="img-fluid" 
-                                     alt="${nombreMostrado}" 
-                                     style="max-height: 100%; object-fit: contain;"
-                                     onerror="this.src='assets/img/default.png'">
-                            </div>
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title text-success fw-bold">${nombreMostrado}</h5>
-                                <p class="card-text text-muted flex-grow-1" style="font-size: 0.9rem;">
-                                    ${descripcionMostrada}
-                                </p>
-                                ${pasosHtml}
-                            </div>
-                            <div class="card-footer bg-white border-0 pb-3">
-                                <span class="badge bg-success w-100">Educativo</span>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                contenedor.innerHTML += card;
-            });
+            if (material) {
+                renderizarDetalle(material, contenedor);
+            } else {
+                contenedor.innerHTML = '<div class="alert alert-warning">Material no encontrado.</div>';
+            }
         })
         .catch(error => {
             console.error("Error:", error);
-            contenedor.innerHTML = '<div class="alert alert-danger w-100">Error al cargar la información.</div>';
+            contenedor.innerHTML = '<div class="alert alert-danger">Error al cargar la base de datos.</div>';
         });
 });
+
+function renderizarDetalle(item, contenedor) {
+    // Convertimos el arreglo de objetos_creados en etiquetas HTML (badges)
+    const objetosHtml = item.objetos_creados 
+        ? item.objetos_creados.map(obj => `<span class="badge rounded-pill bg-light text-dark border me-2 mb-2 p-2">${obj}</span>`).join('')
+        : 'Sin información';
+
+    contenedor.innerHTML = `
+        <div class="card shadow-lg border-0 overflow-hidden">
+            <div class="p-4 text-white" style="background-color: ${item.color_interfaz}">
+                <h1 class="display-5 mb-0">${item.nombre}</h1>
+            </div>
+
+            <div class="row g-0">
+                <div class="col-md-5 d-flex align-items-center justify-content-center bg-white p-3">
+                    <img src="${item.imagen_url}" class="img-fluid rounded" 
+                         alt="${item.nombre}" 
+                         style="max-height: 350px; width: 100%; object-fit: contain;">
+                </div>
+                
+                <div class="col-md-7">
+                    <div class="card-body p-4">
+                        <h4 class="text-muted small text-uppercase fw-bold">Descripción</h4>
+                        <p class="fs-5">${item.descripcion_corta}</p>
+                        
+                        <hr>
+                        
+                        <h4 class="text-success h5"><i class="fas fa-tools me-2"></i>Proceso de Reciclaje</h4>
+                        <p class="text-secondary">${item.proceso_reciclaje}</p>
+                        
+                        <div class="mt-4">
+                            <h4 class="h6 fw-bold text-dark">¿Qué se fabrica con esto?</h4>
+                            <div class="d-flex flex-wrap mt-2">
+                                ${objetosHtml}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-footer bg-white border-0 p-4">
+                <div class="d-flex justify-content-between align-items-center">
+                    <a href="catalogo.html" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left me-2"></i>Regresar al Catálogo
+                    </a>
+                    <small class="text-muted">ID: #00${item.id}</small>
+                </div>
+            </div>
+        </div>
+    `;
+}

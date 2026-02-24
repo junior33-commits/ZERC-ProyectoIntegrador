@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>EcoValora - Guía de Separación</title>
+    <link rel="stylesheet" href="..\style/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="..\style/fontawesome-free-6.4.0-web/css/all.min.css">
+</head>
+<body class="bg-light">
+
+    <div class="container py-5">
+        <header class="text-center mb-5">
+            <h1 class="display-4 fw-bold text-success">Guía de Separación</h1>
+            <p class="lead text-muted">Instrucciones para clasificar tus residuos correctamente.</p>
+        </header>
+
+        <div class="row row-cols-1 row-cols-lg-2 g-4" id="contenedor-separacion">
+            <div class="text-center w-100">
+                <div class="spinner-border text-success" role="status"></div>
+                <p>Cargando información desde el JSON...</p>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="..\guia.html" class="btn btn-secondary px-4">
+                <i class="fas fa-arrow-left me-2"></i>Regresar
+            </a>
+        </div>
+    </div>
+    <script src="..\style/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="..\js/separacion_residuos.js"></script>
+</body>
+</html>

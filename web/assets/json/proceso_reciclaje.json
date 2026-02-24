@@ -4,25 +4,25 @@
     "nombre": "Plásticos",
     "descripcion_corta": "Envases PET, polietileno y plásticos rígidos.",
     "color_hex": "#3498db",
-    "imagen_principal": "assets/img/plasticos_principal.png",
+    "imagen_principal": "../assets/img/reutilizar/plasticos_principal.png",
     "pasos_proceso": [
       {
         "paso": 1,
         "titulo": "Clasificación",
         "descripcion": "Se separan por tipo de resina (PET, HDPE, etc.) usando sensores ópticos.",
-        "imagen": "assets/img/pasos/plastic-1.jpg"
+        "imagen": "../assets/img/reutilizar/plastic-1.jpg"
       },
       {
         "paso": 2,
         "titulo": "Triturado y Lavado",
         "descripcion": "Las botellas se muelen en pequeñas hojuelas y se lavan para eliminar etiquetas y pegamento.",
-        "imagen": "assets/img/pasos/plastic-2.jpg"
+        "imagen": "../assets/img/reutilizar/plastic-2.jpg"
       },
       {
         "paso": 3,
         "titulo": "Peletizado",
         "descripcion": "Las hojuelas se funden y se convierten en 'pellets' (pequeñas esferas) listos para moldear.",
-        "imagen": "assets/img/pasos/plastic-3.jpg"
+        "imagen": "../assets/img/reutilizar/plastic-3.jpg"
       }
     ]
   },
@@ -31,25 +31,25 @@
     "nombre": "Papel y Cartón",
     "descripcion_corta": "Hojas, cajas, periódico y revistas.",
     "color_hex": "#f1c40f",
-    "imagen_principal": "assets/img/papel_principal.png",
+    "imagen_principal": "../assets/img/reutilizar/papel_principal.png",
     "pasos_proceso": [
       {
         "paso": 1,
         "titulo": "Despulpado",
         "descripcion": "El papel se mezcla con agua y químicos para separar las fibras de celulosa.",
-        "imagen": "assets/img/pasos/papel-1.jpg"
+        "imagen": "../assets/img/reutilizar/papel-1.jpg"
       },
       {
         "paso": 2,
         "titulo": "Destintado",
         "descripcion": "Se inyecta aire para que la tinta flote en burbujas y sea eliminada de la mezcla.",
-        "imagen": "assets/img/pasos/papel-2.jpg"
+        "imagen": "../assets/img/reutilizar/papel-2.jpg"
       },
       {
         "paso": 3,
         "titulo": "Laminado",
         "descripcion": "La pulpa limpia se escurre, se prensa y se seca en rodillos gigantes para crear papel nuevo.",
-        "imagen": "assets/img/pasos/papel-3.jpg"
+        "imagen": "../assets/img/reutilizar/papel-3.jpg"
       }
     ]
   },
@@ -58,25 +58,25 @@
     "nombre": "Vidrio",
     "descripcion_corta": "Botellas de bebidas y frascos de comida.",
     "color_hex": "#2ecc71",
-    "imagen_principal": "assets/img/vidrio_principal.png",
+    "imagen_principal": "../assets/img/reutilizar/vidrio_principal.png",
     "pasos_proceso": [
       {
         "paso": 1,
         "titulo": "Limpieza y Clasificación",
         "descripcion": "Se eliminan tapones y etiquetas, separando el vidrio por color (verde, ámbar, transparente).",
-        "imagen": "assets/img/pasos/vidrio-1.jpg"
+        "imagen": "../assets/img/reutilizar/vidrio-1.jpg"
       },
       {
         "paso": 2,
         "titulo": "Trituración (Calcín)",
         "descripcion": "El vidrio se rompe en trozos pequeños llamados calcín para facilitar la fundición.",
-        "imagen": "assets/img/pasos/vidrio-2.jpg"
+        "imagen": "../assets/img/reutilizar/vidrio-2.jpg"
       },
       {
         "paso": 3,
         "titulo": "Fusión",
         "descripcion": "El calcín se funde a 1500°C y se vierte en moldes para crear envases nuevos.",
-        "imagen": "assets/img/pasos/vidrio-3.jpg"
+        "imagen": "../assets/img/reutilizar/vidrio-3.jpg"
       }
     ]
   },
@@ -85,25 +85,25 @@
     "nombre": "Metales",
     "descripcion_corta": "Latas de aluminio y acero.",
     "color_hex": "#95a5a6",
-    "imagen_principal": "assets/img/metales_principal.png",
+    "imagen_principal": "../assets/img/reutilizar/metales_principal.png",
     "pasos_proceso": [
       {
         "paso": 1,
         "titulo": "Separación",
         "descripcion": "Se usan imanes para separar el acero y corrientes de Foucault para el aluminio.",
-        "imagen": "assets/img/pasos/metal-1.jpg"
+        "imagen": "../assets/img/reutilizar/metal-1.jpg"
       },
       {
         "paso": 2,
         "titulo": "Fundición",
         "descripcion": "Las latas se calientan en hornos hasta volverse líquidas, eliminando impurezas.",
-        "imagen": "assets/img/pasos/metal-2.jpg"
+        "imagen": "../assets/img/reutilizar/metal-2.jpg"
       },
       {
         "paso": 3,
         "titulo": "Lingoteado",
         "descripcion": "El metal líquido se enfría en moldes formando lingotes listos para la industria.",
-        "imagen": "assets/img/pasos/metal-3.jpg"
+        "imagen": "../assets/img/reutilizar/metal-3.jpg"
       }
     ]
   },
@@ -112,25 +112,25 @@
     "nombre": "Electrónicos",
     "descripcion_corta": "Computadoras, celulares y cables.",
     "color_hex": "#34495e",
-    "imagen_principal": "assets/img/electronicos_principal.png",
+    "imagen_principal": "../assets/img/reutilizar/electronicos_principal.png",
     "pasos_proceso": [
       {
         "paso": 1,
         "titulo": "Desmantelado",
         "descripcion": "Se abren los equipos manualmente para extraer baterías y tarjetas de circuito.",
-        "imagen": "assets/img/pasos/e-1.jpg"
+        "imagen": "../assets/img/reutilizar/e-1.jpg"
       },
       {
         "paso": 2,
         "titulo": "Molienda",
         "descripcion": "Los componentes se trituran para separar plásticos de metales conductores.",
-        "imagen": "assets/img/pasos/e-2.jpg"
+        "imagen": "../assets/img/reutilizar/e-2.jpg"
       },
       {
         "paso": 3,
         "titulo": "Refinación",
         "descripcion": "Se usan procesos químicos para recuperar oro, plata y cobre de las tarjetas.",
-        "imagen": "assets/img/pasos/e-3.jpg"
+        "imagen": "../assets/img/reutilizar/e-3.jpg"
       }
     ]
   },
@@ -139,25 +139,25 @@
     "nombre": "Orgánicos",
     "descripcion_corta": "Restos de comida y desechos vegetales.",
     "color_hex": "#e67e22",
-    "imagen_principal": "assets/img/organicos_principal.png",
+    "imagen_principal": "../assets/img/reutilizar/organicos_principal.png",
     "pasos_proceso": [
       {
         "paso": 1,
         "titulo": "Preparación",
         "descripcion": "Se trituran los restos de comida y jardín para aumentar el área de descomposición.",
-        "imagen": "assets/img/pasos/org-1.jpg"
+        "imagen": "../assets/img/reutilizar/org-1.jpg"
       },
       {
         "paso": 2,
         "titulo": "Descomposición",
         "descripcion": "Microorganismos degradan la materia en pilas de compostaje con aireación controlada.",
-        "imagen": "assets/img/pasos/org-2.jpg"
+        "imagen": "../assets/img/reutilizar/org-2.jpg"
       },
       {
         "paso": 3,
         "titulo": "Cribado",
         "descripcion": "Se filtra el material para obtener una composta fina lista para ser usada como abono.",
-        "imagen": "assets/img/pasos/org-3.jpg"
+        "imagen": "../assets/img/reutilizar/org-3.jpg"
       }
     ]
   }

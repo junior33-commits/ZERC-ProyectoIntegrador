@@ -3,7 +3,7 @@
     "id": 1,
     "nombre": "Plásticos",
     "descripcion_corta": "Envases PET, polietileno y plásticos rígidos.",
-    "imagen_url": "assets/img/plasticos.png",
+    "imagen_url": "assets/img/reutilizar/plasticos.png",
     "proceso_reciclaje": "Se clasifican por código de resina, se trituran, se lavan y se funden en pellets para fabricar nuevos productos.",
     "objetos_creados": ["Botellas nuevas", "Fibras textiles", "Mobiliario urbano"],
     "color_interfaz": "#3498db"
@@ -12,7 +12,7 @@
     "id": 2,
     "nombre": "Papel y Cartón",
     "descripcion_corta": "Hojas, cajas, periódico y revistas.",
-    "imagen_url": "assets/img/papel_carton.png",
+    "imagen_url": "assets/img/reutilizar/papel_carton.png",
     "proceso_reciclaje": "Se mezcla con agua para crear pulpa, se eliminan tintas y pegamentos, y se extiende para formar nuevas láminas.",
     "objetos_creados": ["Cajas de embalaje", "Papel higiénico", "Cuadernos reciclados"],
     "color_interfaz": "#f1c40f"
@@ -21,7 +21,7 @@
     "id": 3,
     "nombre": "Vidrio",
     "descripcion_corta": "Botellas de bebidas, frascos de comida y envases.",
-    "imagen_url": "assets/img/vidrio.png",
+    "imagen_url": "assets/img/reutilizar/vidrio.png",
     "proceso_reciclaje": "Se separa por colores, se tritura en calcín y se funde a altas temperaturas para moldear envases idénticos.",
     "objetos_creados": ["Botellas nuevas", "Material de construcción", "Artesanías"],
     "color_interfaz": "#2ecc71"
@@ -30,7 +30,7 @@
     "id": 4,
     "nombre": "Metales",
     "descripcion_corta": "Latas de aluminio, acero y otros metales ferrosos.",
-    "imagen_url": "assets/img/metales.png",
+    "imagen_url": "assets/img/reutilizar/metales.png",
     "proceso_reciclaje": "Se utiliza separación magnética, se compacta en balas y se funde en hornos para purificar el metal.",
     "objetos_creados": ["Latas de refresco", "Piezas automotrices", "Vigas de acero"],
     "color_interfaz": "#95a5a6"
@@ -39,7 +39,7 @@
     "id": 5,
     "nombre": "Electrónicos",
     "descripcion_corta": "Computadoras, celulares y componentes internos.",
-    "imagen_url": "assets/img/electronicos.png",
+    "imagen_url": "assets/img/reutilizar/electronicos.png",
     "proceso_reciclaje": "Se desmantelan manualmente para recuperar metales preciosos (oro, plata, cobre) y plásticos especializados.",
     "objetos_creados": ["Nuevas placas de circuito", "Joyas de materiales recuperados", "Lingotes de metal"],
     "color_interfaz": "#34495e"
@@ -48,7 +48,7 @@
     "id": 6,
     "nombre": "Orgánicos",
     "descripcion_corta": "Restos de comida, frutas, verduras y desechos de jardín.",
-    "imagen_url": "assets/img/organicos.png",
+    "imagen_url": "assets/img/reutilizar/organicos.png",
     "proceso_reciclaje": "Transformación biológica mediante compostaje o digestión anaerobia para descomponer la materia.",
     "objetos_creados": ["Composta para cultivos", "Fertilizante líquido", "Biogás (energía)"],
     "color_interfaz": "#e67e22"
