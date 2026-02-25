@@ -6,17 +6,19 @@ public class CentroReciclaje {
     private String nombre;
     private String direccion;
     private String materialesAceptados;
-    private String horario;
+    private String telefonos;
+    private String mapa;
 
     public CentroReciclaje() {
     }
 
-    public CentroReciclaje(int id, String nombre, String direccion, String materialesAceptados, String horario) {
+    public CentroReciclaje(int id, String nombre, String direccion, String materialesAceptados, String telefonos, String mapa) {
         this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
         this.materialesAceptados = materialesAceptados;
-        this.horario = horario;
+        this.telefonos = telefonos;
+        this.mapa = mapa;
     }
 
     public int getId() {
@@ -51,11 +53,19 @@ public class CentroReciclaje {
         this.materialesAceptados = materialesAceptados;
     }
 
-    public String getHorario() {
-        return horario;
+    public String getTelefonos() {
+        return telefonos;
     }
 
-    public void setHorario(String horario) {
-        this.horario = horario;
+    public void setTelefonos(String telefonos) {
+        this.telefonos = telefonos;
+    }
+
+    public String getMapa() {
+        return mapa;
+    }
+
+    public void setMapa(String mapa) {
+        this.mapa = mapa;
     }
 }

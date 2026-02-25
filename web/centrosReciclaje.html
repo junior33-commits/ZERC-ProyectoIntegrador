@@ -17,7 +17,7 @@
                         <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
                         <li class="nav-item"><a class="nav-link" href="guia.html">Guía Educativa</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="centrosReciclaje.html">Centros</a></li>
+                        <li class="nav-item"><a class="nav-link " href="centrosReciclaje.html">Centros</a></li>
                     </ul>
                 </div>
             </div>
@@ -46,28 +46,40 @@
         <!-- Script api -->
         <script>
             fetch('/EcoValora/api/centros')
-                    .then(response => response.json())
-                    .then(data => {
-                        const contenedor = document.getElementById("centros");
-                        data.forEach(centro => {
-                            const card = `
-                <div class="col-md-4">
-                  <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                      <h5 class="card-title">${centro.nombre}</h5>
-                      <p class="card-text">
-                        📍 ${centro.direccion}<br>
-                        ♻ Acepta: ${centro.materialesAceptados}<br>
-                        ⏰ ${centro.horario}
-                      </p>
-                      <a href="#" class="btn btn-success w-100">Ver detalles</a>
-                    </div>
-                  </div>
-                </div>`;
-                            contenedor.innerHTML += card;
-                        });
-                    })
-                    .catch(error => console.error("Error cargando centros:", error));
+            .then(response => response.json())
+            .then(data => {
+                const contenedor = document.getElementById("centros");
+                contenedor.innerHTML = "";
+
+                data.forEach(centro => {
+                    const card = `
+                    <div class="col-md-6">
+                      <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                          <h5 class="card-title">${centro.nombre}</h5>
+
+                          <p class="card-text">
+                            📍 ${centro.direccion}<br>
+                            ♻ ${centro.materialesAceptados}<br>
+                            📞 ${centro.telefonos}
+                          </p>
+                          <div class="ratio ratio-16x9 mt-2">
+                            <iframe 
+                                src="${centro.mapa}"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy">
+                            </iframe>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>`;
+
+                    contenedor.innerHTML += card;
+                });
+            })
+            .catch(error => console.error("Error cargando centros:", error));
         </script>
 
     </body>
