@@ -8,13 +8,27 @@
 </head>
 <body class="bg-light">
 
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#2E7D32;">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">♻ EcoValora</a>
+
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../catalogo.html">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../guia.html">Guía Educativa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../centrosReciclaje.html">Centros</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container py-5">
         <header class="text-center mb-5">
             <h1 class="display-4 fw-bold text-success">Guía de Separación</h1>
             <p class="lead text-muted">Instrucciones para clasificar tus residuos correctamente.</p>
         </header>
 
-        <div class="row row-cols-1 row-cols-lg-2 g-4" id="contenedor-separacion">
+        <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center mx-auto" id="contenedor-separacion" style="max-width: 900px;">
             <div class="text-center w-100">
                 <div class="spinner-border text-success" role="status"></div>
                 <p>Cargando información desde el JSON...</p>

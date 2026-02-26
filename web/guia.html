@@ -1,74 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>EcoValora | Guía Educativa</title>
-        <link rel="stylesheet" href="style/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="style/bootstrap/css/bootstrap-utilities.min.css">
-    </head>
-    <body style="background-color:#F5F5F5;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoValora | Guía Educativa</title>
+    
+    <link rel="stylesheet" href="style/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/bootstrap/css/bootstrap-utilities.min.css">
+</head>
+<body class="d-flex flex-column min-vh-100" style="background-color:#F5F5F5;">
 
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#2E7D32;">
-            <div class="container">
-                <a class="navbar-brand fw-bold" href="index.html">♻ EcoValora</a>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#2E7D32;">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">♻ EcoValora</a>
 
-                <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="guia.html">Guía Educativa</a></li>
-                        <li class="nav-item"><a class="nav-link" href="centrosReciclaje.html">Centros</a></li>
-                    </ul>
-                </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="guia.html">Guía Educativa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="centrosReciclaje.html">Centros</a></li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <section class="py-4 text-center">
-            <h1 class="fw-bold text-success">Guía Educativa</h1>
-            <p class="text-muted">Explora nuestros manuales y proyectos de reciclaje.</p>
+    <div class="flex-grow-1">
+        <section class="py-5 text-center">
+            <div class="container">
+                <h1 class="fw-bold text-success">Guía Educativa</h1>
+                <p class="lead text-secondary">Aprende paso a paso cómo mejorar el impacto ambiental desde casa.</p>
+            </div>
         </section>
 
         <section class="container mb-5">
-            <div class="row g-4" id="guia-opciones">
-                
+            <div class="row g-4">
+
                 <div class="col-md-4">
-                  <div class="card h-100 text-center shadow-sm">
-                    <div class="card-body">
-                      <h5 class="fw-bold">Separación de Residuos</h5>
-                      <p>Aprende a clasificar correctamente el PET, papel, vidrio y metales.</p>
-                      <a href="guia_educativa/separacion_residuos.html" class="btn btn-outline-success">Ver más</a>
+                  <div class="card h-100 text-center shadow-sm border-0">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="fw-bold text-success">Separación de Residuos</h5>
+                      <p class="text-muted">Aprende la forma correcta de clasificar tus desechos en casa.</p>
+                      <div class="mt-auto">
+                        <a href="guia_educativa/separacion_residuos.html" class="btn btn-outline-success w-100">Conocer más</a>
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 <div class="col-md-4">
-                  <div class="card h-100 text-center shadow-sm">
-                    <div class="card-body">
-                      <h5 class="fw-bold">Reutilizar y Crear</h5>
-                      <p>Dale una segunda vida a tus residuos con proyectos creativos paso a paso.</p>
-                      <a href="guia_educativa/reutilizar_crear.html" class="btn btn-outline-success">Ver más</a>
+                  <div class="card h-100 text-center shadow-sm border-0">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="fw-bold text-success">Reutilizar y Crear</h5>
+                      <p class="text-muted">Dale una segunda vida a tus residuos con proyectos creativos paso a paso.</p>
+                      <div class="mt-auto">
+                        <a href="guia_educativa/reutilizar_crear.html" class="btn btn-outline-success w-100">Conocer más</a>
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 <div class="col-md-4">
-                  <div class="card h-100 text-center shadow-sm">
-                    <div class="card-body">
-                      <h5 class="fw-bold">Proceso Industrial</h5>
-                      <p>Conoce el camino que siguen los materiales después de llegar al centro de acopio.</p>
-                      <a href="guia_educativa/proceso_reciclaje.html" class="btn btn-outline-success">Ver más</a>
+                  <div class="card h-100 text-center shadow-sm border-0">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="fw-bold text-success">Proceso Industrial</h5>
+                      <p class="text-muted">Conoce el camino que siguen los materiales después de llegar al centro de acopio.</p>
+                      <div class="mt-auto">
+                        <a href="guia_educativa/proceso_reciclaje.html" class="btn btn-outline-success w-100">Conocer más</a>
+                      </div>
                     </div>
                   </div>
                 </div>
 
             </div>
         </section>
+    </div>
 
-        <footer class="text-center py-3" style="background-color:#2E7D32; color:white;">
+    <footer class="text-center py-3 mt-auto" style="background-color:#2E7D32; color:white;">
+        <div class="container">
             <small>© 2026 EcoValora | Código para el mañana</small>
-        </footer>
+        </div>
+    </footer>
 
-        <script src="style/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="style/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    </body>
+</body>
 </html>

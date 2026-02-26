@@ -79,12 +79,21 @@
                 data.forEach(material => {
                     const card = `
                         <div class="col">
-                            <div class="card h-100 shadow-sm">
-                                <img src="${material.imagen_url}" class="card-img-top" alt="${material.nombre}" style="height: 200px; object-fit: cover;">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title text-success">${material.nombre}</h5>
-                                    <p class="card-text text-muted">${material.descripcion_corta}</p>
-                                    <a href="detalle.html?id=${material.id}" class="btn btn-success">Ver Detalles</a>
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="d-flex align-items-center justify-content-center bg-white p-3" style="height: 200px; border-radius: 8px 8px 0 0;">
+                                    <img src="${material.imagen_url}" 
+                                         class="img-fluid" 
+                                         alt="${material.nombre}" 
+                                         style="max-height: 100%; width: auto; object-fit: contain;">
+                                </div>
+
+                                <div class="card-body text-center d-flex flex-column">
+                                    <h5 class="card-title text-success fw-bold">${material.nombre}</h5>
+                                    <p class="card-text text-muted small">${material.descripcion_corta}</p>
+
+                                    <div class="mt-auto">
+                                        <a href="detalle.html?id=${material.id}" class="btn btn-success w-100">Ver Detalles</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
