@@ -3,32 +3,32 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Centros de Reciclaje | EcoValora</title>
+        <title>EcoValora | Centros de Reciclaje</title>
         <link rel="stylesheet" href="style/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="style/bootstrap/css/bootstrap-utilities.min.css">
     </head>
     <body style="background-color: #F1F8E9; padding-top: 70px;">
-        
+
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:#2E7D32;">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">♻ EcoValora</a>
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">♻ EcoValora</a>
 
-            <!-- BOTÓN DE LAS 3 RAYITAS -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <!-- BOTÓN DE LAS 3 RAYITAS -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <!-- MENÚ -->
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="guia.html">Guía Educativa</a></li>
-                    <li class="nav-item"><a class="nav-link" href="centrosReciclaje.html">Centros</a></li>
-                </ul>
+                <!-- MENÚ -->
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="guia.html">Guía Educativa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="centrosReciclaje.html">Centros</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
         <!-- ENCABEZADO -->
         <header class="text-center py-5">
@@ -48,18 +48,18 @@
             <small>© 2026 EcoValora | Código para el mañana</small>
         </footer>
 
-        <script src="style/bootstrap/js/bootstrap.bundle.min.js"></script> 
+        <script src="style/bootstrap/js/bootstrap.bundle.min.js"></script>
 
         <!-- Script api -->
         <script>
             fetch('/EcoValora/api/centros')
-            .then(response => response.json())
-            .then(data => {
-                const contenedor = document.getElementById("centros");
-                contenedor.innerHTML = "";
+                    .then(response => response.json())
+                    .then(data => {
+                        const contenedor = document.getElementById("centros");
+                        contenedor.innerHTML = "";
 
-                data.forEach(centro => {
-                    const card = `
+                        data.forEach(centro => {
+                            const card = `
                     <div class="col-md-6">
                       <div class="card h-100 shadow-sm">
                         <div class="card-body">
@@ -71,7 +71,7 @@
                             📞 ${centro.telefonos}
                           </p>
                           <div class="ratio ratio-16x9 mt-2">
-                            <iframe 
+                            <iframe
                                 src="${centro.mapa}"
                                 style="border:0;"
                                 allowfullscreen=""
@@ -83,10 +83,10 @@
                       </div>
                     </div>`;
 
-                    contenedor.innerHTML += card;
-                });
-            })
-            .catch(error => console.error("Error cargando centros:", error));
+                            contenedor.innerHTML += card;
+                        });
+                    })
+                    .catch(error => console.error("Error cargando centros:", error));
         </script>
 
     </body>

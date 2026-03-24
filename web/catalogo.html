@@ -51,7 +51,7 @@
             <small>© 2026 EcoValora | Código para el mañana</small>
         </footer>
 
-        <script src="style/bootstrap/js/bootstrap.bundle.min.js"></script>  
+        <script src="style/bootstrap/js/bootstrap.bundle.min.js"></script>
 
         <!-- Script api -->
         <script>
@@ -76,21 +76,21 @@
                     .catch(error => console.error("Error cargando catálogo:", error));
         </script>
         <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const contenedor = document.getElementById('contenedor-catalogo');
-        
-        // Cargamos los materiales desde la carpeta que creaste
-        fetch('assets/json/materiales_valorizables.json')
-            .then(response => response.json())
-            .then(data => {
-                data.forEach(material => {
-                    const card = `
+            document.addEventListener("DOMContentLoaded", () => {
+                const contenedor = document.getElementById('contenedor-catalogo');
+
+                // Cargamos los materiales desde la carpeta que creaste
+                fetch('assets/json/materiales_valorizables.json')
+                        .then(response => response.json())
+                        .then(data => {
+                            data.forEach(material => {
+                                const card = `
                         <div class="col">
                             <div class="card h-100 shadow-sm border-0">
                                 <div class="d-flex align-items-center justify-content-center bg-white p-3" style="height: 200px; border-radius: 8px 8px 0 0;">
-                                    <img src="${material.imagen_url}" 
-                                         class="img-fluid" 
-                                         alt="${material.nombre}" 
+                                    <img src="${material.imagen_url}"
+                                         class="img-fluid"
+                                         alt="${material.nombre}"
                                          style="max-height: 100%; width: auto; object-fit: contain;">
                                 </div>
 
@@ -105,12 +105,12 @@
                             </div>
                         </div>
                     `;
-                    contenedor.innerHTML += card;
-                });
-            })
-            .catch(error => console.error("Error cargando catálogo:", error));
-    });
-</script>
+                                contenedor.innerHTML += card;
+                            });
+                        })
+                        .catch(error => console.error("Error cargando catálogo:", error));
+            });
+        </script>
 
     </body>
 </html>
